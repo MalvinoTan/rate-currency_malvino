@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Table from './components/Table';
 
-function App() {
+const App = () => {
+
+  const [data, setDatas] = useState(null);
+
+  const getData = async () => {
+    return axios.get("https://api.currencyfreaks.com/latest?apikey=550d6c819a5441e1a4235f2ee0496dc7&symbols=CAD,EUR,IDR,JPY,CHF,GBP");
+  };
+
+  useEffect(() => {
+    getData().then(res => setDatas(res.data));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        data ?
+          <>
+            <Table 
+              headers={["Currency", "We Buy", "Exchange Rate", "We Sell"]} 
+              datas={data.rates} 
+            />
+            <small>Rates are based from 1 {data.base}.</small>
+          </>
+            :
+            <></>
+      }
+      <small>This application uses API from https://currencyfreaks.com.</small>
     </div>
   );
 }
