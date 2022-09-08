@@ -28,7 +28,7 @@ const Table = ({ headers, datas }) => {
                 }
             </tbody>
         </table>
-    ); 
+    );
 };
 
 export default Table;

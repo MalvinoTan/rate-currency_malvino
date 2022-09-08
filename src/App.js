@@ -21,14 +21,14 @@ const App = () => {
       {
         data ?
           <>
-            <Table 
-              headers={["Currency", "We Buy", "Exchange Rate", "We Sell"]} 
-              datas={data.rates} 
+            <Table
+              headers={["Currency", "We Buy", "Exchange Rate", "We Sell"]}
+              datas={data.rates}
             />
             <small>Rates are based from 1 {data.base}.</small>
           </>
-            :
-            <InfinitySpin color="white" />
+          :
+          <InfinitySpin color="white" />
       }
       <small>This application uses API from https://currencyfreaks.com.</small>
     </div>
