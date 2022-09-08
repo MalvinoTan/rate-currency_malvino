@@ -1,9 +1,8 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import Table from './components/Table';
 import { InfinitySpin } from 'react-loader-spinner';
+import Table from './components/Table';
 
 const App = () => {
 
