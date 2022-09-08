@@ -1,0 +1,18 @@
+.container {
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+}
+
+.container h1, .container h2, .container h3 {
+    margin: .75rem;
+}
+
+.container hr {
+    margin-bottom: 2rem;
+}
+
+.container p {
+    margin-bottom: 2rem;
+}
