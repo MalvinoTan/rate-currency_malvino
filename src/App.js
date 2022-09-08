@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Table from './components/Table';
+import { InfinitySpin } from 'react-loader-spinner';
 
 const App = () => {
 
@@ -28,7 +29,7 @@ const App = () => {
             <small>Rates are based from 1 {data.base}.</small>
           </>
             :
-            <></>
+            <InfinitySpin color="white" />
       }
       <small>This application uses API from https://currencyfreaks.com.</small>
     </div>
