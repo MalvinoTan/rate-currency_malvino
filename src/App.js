@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-/** Components */
+/** Pages */
 import Home from './pages/Home';
 import About from './pages/About';
 
